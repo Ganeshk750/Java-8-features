@@ -1,6 +1,4 @@
-package com.biconsumer;
-
-import com.functionalInterface.Instructor;
+package com.predicate;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,5 +19,4 @@ public class Instructors {
         List<Instructor> list = Arrays.asList(instructor1, instructor2, instructo3, instructor4, instructor5);
         return list;
     }
-
 }
