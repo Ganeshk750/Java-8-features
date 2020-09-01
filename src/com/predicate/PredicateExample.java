@@ -14,5 +14,8 @@ public class PredicateExample {
 
         //If  i > 10 || number is even number ( i % 2 == 0)
         System.out.println(p1.or(p2).test(4));
+
+        // i > 0 && number is odd (i % 2 != 0)
+        System.out.println(p1.and(p2.negate()).test(33));
     }
 }
