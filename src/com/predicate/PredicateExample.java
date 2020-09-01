@@ -11,5 +11,8 @@ public class PredicateExample {
         //If i > 10 && number is even number (i % 2 == 0)
         Predicate<Integer> p2 = (i) -> i % 2 == 0;
         System.out.println(p1.and(p2).test(20));
+
+        //If  i > 10 || number is even number ( i % 2 == 0)
+        System.out.println(p1.or(p2).test(4));
     }
 }
