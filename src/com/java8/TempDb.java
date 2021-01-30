@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 public class TempDb {
 
-    public List<EmployeeEntity> getAllEmployees(){
+    public static List<EmployeeEntity> getAllEmployees(){
         return Stream.of(
                 new EmployeeEntity(101, "Ganesh", "ganesh@gmail.com", Arrays.asList("9999888822","8888555533")),
                 new EmployeeEntity(102, "Rohan", "rohan@gmail.com", Arrays.asList("9912348822","8888521433")),
