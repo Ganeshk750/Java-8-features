@@ -21,6 +21,10 @@ public class MapOrflatMapTest {
          List<String> listOfEmails = sampleEmployeeData.stream().map((employee) -> employee.getEmail()).collect(Collectors.toList());
         System.out.println(listOfEmails);
 
+        //We can replace lambda to MethodReference
+        System.out.println("===========MethodOfReference=============");
+        List<String> listOfEmail = sampleEmployeeData.stream().map(EmployeeEntity::getEmail).collect(Collectors.toList());
+        System.out.println(listOfEmails);
 
 
 
