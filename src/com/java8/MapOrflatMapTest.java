@@ -7,6 +7,7 @@ package com.java8;
 
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ public class MapOrflatMapTest {
         List<EmployeeEntity> sampleEmployeeData = TempDb.getAllEmployees();
 
         // Now We are try to use map operator to list all employee "email"
-        // Map is used to one to one mapping i.e employee have one email
+        // Map is used to one-to-one mapping i.e employee have one email
          List<String> listOfEmails = sampleEmployeeData.stream().map((employee) -> employee.getEmail()).collect(Collectors.toList());
         System.out.println(listOfEmails);
 
@@ -31,10 +32,9 @@ public class MapOrflatMapTest {
         System.out.println(allPhoneNumbers);
 
         // Now We are try to use flatMap operator to list employee "mobileNumbers"
-        // flatMap is used to one to many mapping i.e employee have multiple mobileNumber
+        // flatMap is used to one-to-many mapping i.e employee have multiple mobileNumber
         List<String> allPhonNumbers = sampleEmployeeData.stream().flatMap((employee) -> employee.getPhoneNumbers().stream()).collect(Collectors.toList());
         System.out.println(allPhonNumbers);
-
 
 
         System.out.println("======Program end========");
