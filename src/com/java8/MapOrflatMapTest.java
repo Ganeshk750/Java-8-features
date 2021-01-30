@@ -26,7 +26,9 @@ public class MapOrflatMapTest {
         List<String> listOfEmail = sampleEmployeeData.stream().map(EmployeeEntity::getEmail).collect(Collectors.toList());
         System.out.println(listOfEmails);
 
-
+        // Now we can try to get "mobileNumbers" of employee
+       List<List<String>> allPhoneNumbers = sampleEmployeeData.stream().map(EmployeeEntity::getPhoneNumbers).collect(Collectors.toList());
+        System.out.println(allPhoneNumbers);
 
         System.out.println("======Program end========");
     }
