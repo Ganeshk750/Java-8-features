@@ -27,8 +27,15 @@ public class MapOrflatMapTest {
         System.out.println(listOfEmails);
 
         // Now we can try to get "mobileNumbers" of employee
-       List<List<String>> allPhoneNumbers = sampleEmployeeData.stream().map(EmployeeEntity::getPhoneNumbers).collect(Collectors.toList());
+        List<List<String>> allPhoneNumbers = sampleEmployeeData.stream().map(EmployeeEntity::getPhoneNumbers).collect(Collectors.toList());
         System.out.println(allPhoneNumbers);
+
+        // Now We are try to use flatMap operator to list employee "mobileNumbers"
+        // flatMap is used to one to many mapping i.e employee have multiple mobileNumber
+        List<String> allPhonNumbers = sampleEmployeeData.stream().flatMap((employee) -> employee.getPhoneNumbers().stream()).collect(Collectors.toList());
+        System.out.println(allPhonNumbers);
+
+
 
         System.out.println("======Program end========");
     }
