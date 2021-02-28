@@ -55,6 +55,15 @@ public class MapReduceFilter {
                 .mapToDouble(value -> value)
                 .average().getAsDouble();
         System.out.println("AVERAGE SALARY: "+ avgSal);
+
+        System.out.println("-------SUM OF SALARY WHOSE GRADE 'A'-----------");
+        double sal = sampleEmployeeData.stream()
+                .filter(grade -> grade.getGrade().equalsIgnoreCase("A"))
+                .map(bal -> bal.getSalary())
+                .mapToDouble(bal1 -> bal1)
+                .sum();
+        System.out.println("GRADE 'A' SALARY: "+sal);
+
     }
 
 }
