@@ -8,6 +8,7 @@ package com.java8;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class MapReduceFilter {
 
@@ -17,7 +18,19 @@ public class MapReduceFilter {
         for(int num : numbers){
             sum = sum + num;
         }
-        System.out.println("Total Sum: "+ sum);
+        System.out.println("Total : "+ sum);
+        System.out.println("---------Using Java 8-------------");
+        int sum1 = numbers.stream().mapToInt(value -> value).sum();
+        System.out.println("Total : "+ sum1);
+
+        System.out.println("--------USING REDUCE METHOD-------------");
+        int reduceSum = numbers.stream().reduce(0,(identity, accumulator) -> identity + accumulator);
+        System.out.println("Total: "+ reduceSum);
+        System.out.println("--------USING METHOD REFERENCE------");
+        Optional<Integer> reduceWithMethodReference = numbers.stream()
+                .reduce(Integer::sum);
+        System.out.println("Total: "+ reduceWithMethodReference); //Total: Optional[37]
+        System.out.println("Total: "+ reduceWithMethodReference.get()); // Total: 37
     }
 
 }
