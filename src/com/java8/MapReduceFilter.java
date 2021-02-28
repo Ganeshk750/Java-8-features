@@ -41,6 +41,12 @@ public class MapReduceFilter {
         System.out.println("---------USING ()REF-----------");
         Optional<Integer> max1 = numbers.stream().reduce(Integer::max);
         System.out.println("Max Value: "+ max1.get());
+
+        List<String> words = Arrays.asList("corejava", "spring", "hibernater", "angular");
+        String longestString = words.stream()
+                .reduce((word1, word2) -> word1.length() > word2.length() ? word1: word2).get();
+
+        System.out.println("Longest Words: "+ longestString);
     }
 
 }
