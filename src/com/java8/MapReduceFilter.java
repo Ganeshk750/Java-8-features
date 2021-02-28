@@ -47,6 +47,14 @@ public class MapReduceFilter {
                 .reduce((word1, word2) -> word1.length() > word2.length() ? word1: word2).get();
 
         System.out.println("Longest Words: "+ longestString);
+        System.out.println("----------REDUCE USE CASE--------------");
+
+        List<EmployeeEntity> sampleEmployeeData = TempDb.getAllEmployees();
+        double avgSal = sampleEmployeeData.stream().filter(grade -> grade.getGrade().equalsIgnoreCase("A"))
+                .map(sal -> sal.getSalary())
+                .mapToDouble(value -> value)
+                .average().getAsDouble();
+        System.out.println("AVERAGE SALERY: "+ avgSal);
     }
 
 }
