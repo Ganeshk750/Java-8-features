@@ -54,7 +54,7 @@ public class MapReduceFilter {
                 .map(sal -> sal.getSalary())
                 .mapToDouble(value -> value)
                 .average().getAsDouble();
-        System.out.println("AVERAGE SALERY: "+ avgSal);
+        System.out.println("AVERAGE SALARY: "+ avgSal);
     }
 
 }
