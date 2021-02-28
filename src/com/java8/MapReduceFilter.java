@@ -31,9 +31,13 @@ public class MapReduceFilter {
                 .reduce(Integer::sum);
         System.out.println("Total: "+ reduceWithMethodReference); //Total: Optional[37]
         System.out.println("Total: "+ reduceWithMethodReference.get()); // Total: 37
+        System.out.println("--------------MULTIPLICATION RESULT----------");
         Integer multipleResult = numbers.stream()
                 .reduce(1, (a, b) -> a * b);
         System.out.println("Multiplication Result: "+ multipleResult);
+        System.out.println("---------MAX VALUE----------");
+        Integer maxValue = numbers.stream().reduce(0,(a, b) -> a > b ? a : b);
+        System.out.println("Max Value: "+ maxValue);
     }
 
 }
