@@ -12,7 +12,7 @@ import java.util.Optional;
 public class OptionalExample {
 
     public static void main(String[] args) {
-        EmployeeEntity emp = new EmployeeEntity(101, "Vikash", null, Arrays.asList("9999888822","8888555533"));
+        EmployeeEntity emp = new EmployeeEntity(101, "Vikash", null,"A", 28000, Arrays.asList("9999888822","8888555533"));
 
         Optional<Object> obj = Optional.empty();
         System.out.println(obj);
