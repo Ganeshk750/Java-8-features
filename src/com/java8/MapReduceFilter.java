@@ -38,6 +38,9 @@ public class MapReduceFilter {
         System.out.println("---------MAX VALUE----------");
         Integer maxValue = numbers.stream().reduce(0,(a, b) -> a > b ? a : b);
         System.out.println("Max Value: "+ maxValue);
+        System.out.println("---------USING ()REF-----------");
+        Optional<Integer> max1 = numbers.stream().reduce(Integer::max);
+        System.out.println("Max Value: "+ max1.get());
     }
 
 }
