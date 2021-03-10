@@ -15,6 +15,14 @@ public class CreditCard {
     private int limit;
     private double balance;
 
+    /**
+     * Constructs a new credit card instance.
+     * @param customer the name of customer(eg: "")
+     * @param bank   the name of the bank(eg: "")
+     * @param account the account identifier(eg: "")
+     * @param limit  the credit limit(eg: measured in --)
+     * @param balance the initial balance(eg: measured in --)
+     */
     public CreditCard(String customer, String bank, String account, int limit, double balance) {
         this.customer = customer;
         this.bank = bank;
@@ -47,7 +55,11 @@ public class CreditCard {
         return balance;
     }
 
-    // Update Methods
+    /**
+     * Charges the given price to the card, assuming sufficient credit limit.
+     * @param price the amount to be charged
+     * @return true if charge was accepted; false if charge was denied
+     */
     public boolean charge(double price){
         if(price + balance > limit) {
             return false;
@@ -57,6 +69,10 @@ public class CreditCard {
         }
     }
 
+    /**
+     * Processes customer payment that reduce balance.
+     * @param amount the amount of payment made
+     */
     public void makePayment(double amount){
         balance -= amount;
     }
