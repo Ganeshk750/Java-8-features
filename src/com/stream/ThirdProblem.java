@@ -20,7 +20,7 @@ public class ThirdProblem {
 
         List<Employee> employeeList = TestEmployeeDb.getAllEmployees();
         Map<String,Double> avgAgeOfMaleAndFemale = employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getAge)));
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
         System.out.println(avgAgeOfMaleAndFemale);
     }
 }
