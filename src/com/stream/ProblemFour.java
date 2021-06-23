@@ -18,6 +18,7 @@ public class ProblemFour {
     public static void main(String[] args) {
 
         // Problem 4 :- Get The Details Of The Highest Paid Employee In The Organization?
+
         List<Employee> employeeList = TestEmployeeDb.getAllEmployees();
         Optional<Employee> maxEmpSal = employeeList.stream()
                                        .collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
