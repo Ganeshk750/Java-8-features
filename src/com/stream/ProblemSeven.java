@@ -21,8 +21,9 @@ public class ProblemSeven {
         Map<String, Double> avgSalOfDepartment = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.averagingDouble(Employee::getSalary)));
         System.out.println(avgSalOfDepartment);
+        System.out.println("=======================");
         Set<Map.Entry<String, Double>> entrySet = avgSalOfDepartment.entrySet();
-        for (Map.Entry<String, Double> entry: entrySet){
+        for(Map.Entry<String, Double> entry: entrySet){
             System.out.println(entry.getKey()+ " : "+ entry.getValue());
         }
     }
